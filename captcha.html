@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pls Robux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff5e57;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .content {
+            margin-top: 50px;
+        }
+
+        .message {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .donate-btn {
+            background-color: #ff5e57;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .donate-btn:hover {
+            background-color: #ff3b2a;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #555;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+
+        .robux-image {
+            width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Pls Robux</h1>
+        <p>Your help means a lot!</p>
+    </header>
+
+    <div class="content">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Robux_Logo_2022.png" alt="Robux Logo" class="robux-image">
+        <p class="message">Help me by donating some Robux! Every little bit helps!</p>
+
+        <!-- Example button for donations -->
+        <a href="https://www.roblox.com/users/your-roblox-id" class="donate-btn" target="_blank">Donate Robux</a>
+    </div>
+
+    <footer>
+        <p>Thank you for visiting. Have a great day!</p>
+    </footer>
+
+</body>
+</html>
+<body>
+
+    <div class="captcha-box">
+        <p id="captcha-question"></p>
+        <input type="text" id="captcha-answer" placeholder="Your answer">
+        <button onclick="checkCaptcha()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        let num1, num2;
+
+        function generateCaptcha() {
+            num1 = Math.floor(Math.random() * 10) + 1;
+            num2 = Math.floor(Math.random() * 10) + 1;
+            document.getElementById("captcha-question").innerText = `What is ${num1} + ${num2}?`;
+        }
+
+        function checkCaptcha() {
+            const userAnswer = document.getElementById("captcha-answer").value;
+            const correctAnswer = num1 + num2;
+
+            if (parseInt(userAnswer) === correctAnswer) {
+                document.getElementById("result").innerText = "✅ Correct! You may proceed.";
+            } else {
+                document.getElementById("result").innerText = "❌ Incorrect. Try again.";
+                generateCaptcha();
+                document.getElementById("captcha-answer").value = '';
+            }
+        }
+
+        window.onload = generateCaptcha;
+    </script>
+
+</body>
+</html>
